@@ -146,8 +146,9 @@ namespace WindowsFormsApplication1
         {
             if (usuario.IDcargo1 == 5)
             {
-                frmConductor = new FrmPrincipalChofer(usuario.IDusuario1 + "", usuario.Nombre);
+                frmConductor = new FrmPrincipalChofer();
                 //(((usuario.IDusuario1+"", usuario.Nombre);
+
                 mostrarMódulo(frmMenu, frmConductor);
             }
             else

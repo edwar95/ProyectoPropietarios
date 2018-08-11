@@ -40,9 +40,10 @@
             this.Ingresar.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.Ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ingresar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Ingresar.Location = new System.Drawing.Point(124, 116);
+            this.Ingresar.Location = new System.Drawing.Point(93, 94);
+            this.Ingresar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Ingresar.Name = "Ingresar";
-            this.Ingresar.Size = new System.Drawing.Size(158, 49);
+            this.Ingresar.Size = new System.Drawing.Size(118, 40);
             this.Ingresar.TabIndex = 6;
             this.Ingresar.Text = "ACEPTAR";
             this.Ingresar.UseVisualStyleBackColor = false;
@@ -53,9 +54,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label1.Location = new System.Drawing.Point(12, 0);
+            this.label1.Location = new System.Drawing.Point(4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(381, 113);
+            this.label1.Size = new System.Drawing.Size(295, 92);
             this.label1.TabIndex = 7;
             this.label1.Text = "No puede calificar el servicio porque aún no ha realizado ningun viaje";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -69,19 +71,22 @@
             this.tableLayoutPanel1.Controls.Add(this.Ingresar, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.78523F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.21476F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(406, 168);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(304, 136);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // FrmMensajeError
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 170);
+            this.ClientSize = new System.Drawing.Size(305, 138);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmMensajeError";
             this.Text = "FrmMensajeError";
             this.tableLayoutPanel1.ResumeLayout(false);

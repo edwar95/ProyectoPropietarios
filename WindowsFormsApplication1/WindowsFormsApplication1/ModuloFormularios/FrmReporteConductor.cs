@@ -15,12 +15,12 @@ namespace ModuloFormularios
     {
         private CSReporteConductor reporteConductor;
         
-        public Form2(string idConductor, string nombresConductor, string [] reservas)
+        public Form2(string cedulaConductor, string nombresConductor, string [] reservas)
         {
             InitializeComponent();
             crearCombo(reservas);
             reporteConductor = new CSReporteConductor();
-            txt_idConductor.Text = idConductor;
+            txt_idConductor.Text = cedulaConductor;
             txt_nombreConductor.Text = nombresConductor;
         }
         public void crearCombo(string[] reservas) {
