@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
         private void Ingresar_Click(object sender, EventArgs e)
         {
             FrmSolicitudDeViaje solicitudDeViaje = new FrmSolicitudDeViaje();
-            //solicitudDeViaje.
+            solicitudDeViaje.llenarFormulario(usu.Nombre,usu.Email);
             solicitudDeViaje.Show();
         }
 

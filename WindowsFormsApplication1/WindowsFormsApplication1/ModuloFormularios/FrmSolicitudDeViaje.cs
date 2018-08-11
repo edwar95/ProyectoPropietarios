@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApplication1;
-
+using WindowsFormsApplication1.ModuloFormularios;
 
 namespace ModuloFormularios
 {
@@ -20,6 +20,7 @@ namespace ModuloFormularios
         private SqlConnection conn;
         private string idusuario;
         private string idmotivo;
+        string destino;
         public FrmSolicitudDeViaje()
         {
             InitializeComponent();
@@ -32,32 +33,17 @@ namespace ModuloFormularios
             txt_nombreSolicitante.Text = nombre;
         }
 
-        public void ponerIDs(String idusuario,string idmotivo) {
+        public void ponerIDs(String idusuario,string idmotivo,string destino) {
             this.idusuario = idusuario;
             this.idmotivo = idmotivo;
         }
         
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-
-           
-            //try
-            //{
-            //    cnx = new Conexion();
-            //    conn = new SqlConnection(cnx.stringConexion);
-            //    conn.Open();
-            //    String sql = "insert into SolicitudReserva(idMotivoViaje,idCategoriaUsuario,idSolicitante,idLugar,numeroPersonas,fechaSalida,fechaRetorno,estadoSolicitud,fechaReserva) " +
-            //        "values(" + (comboBoxMotivos.SelectedIndex + 1) + "," + 1 + "," + idSol + "," + (comboBoxMotivos.SelectedIndex + 1) + "," + 3 + ",'" +
-            //        dtf_salida.Text + " " + dth_salida.Text + "','" + dtf_llegada.Text + " " + dth_llegada.Text + "','en espera','" + thisDay.ToString() + "')";
-            //    SqlCommand comando = new SqlCommand(sql, conn);
-            //    int resultado = comando.ExecuteNonQuery();
-            //    MessageBox.Show("" + sql);
-            //}
-            //catch (Exception er)
-            //{
-            //    MessageBox.Show("Error");
-            //    Console.WriteLine(er.ToString());
-            //}
+            destino = textBox2.Text + "," + comboBox1.SelectedIndex.ToString() + ",Ecuador";
+            //string idUsuario,string idmotivo, string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, int numeroPersonas
+            CSSolicitudDeViaje solicitudDeViaje = new CSSolicitudDeViaje(idusuario,idmotivo,destino,dtf_salida.Text, dth_salida.Text, dtf_llegada.Text, dth_llegada.Text, Convert.ToInt32(textBox1.Text));
+            solicitudDeViaje.guardarEnBase();
         }
     }
 }

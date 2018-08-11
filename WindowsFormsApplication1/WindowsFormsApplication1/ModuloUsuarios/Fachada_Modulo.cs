@@ -148,12 +148,13 @@ namespace WindowsFormsApplication1
             {
                 frmConductor = new FrmPrincipalChofer();
                 //(((usuario.IDusuario1+"", usuario.Nombre);
+
                 mostrarMódulo(frmMenu, frmConductor);
             }
             else
             {
                 frmProfesor = new FrmPrincipalFormularioProfesor();
-
+                frmProfesor.ponerUsuario(usuario);
                 mostrarMódulo(frmMenu, frmProfesor);
 
             }
