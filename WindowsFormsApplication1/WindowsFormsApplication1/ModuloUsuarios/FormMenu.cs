@@ -220,6 +220,11 @@ namespace WindowsFormsApplication1
             fm1.mostrarFormularios(this);
         }
 
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            fm1.mostrarReportes(this);
+        }
+
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)

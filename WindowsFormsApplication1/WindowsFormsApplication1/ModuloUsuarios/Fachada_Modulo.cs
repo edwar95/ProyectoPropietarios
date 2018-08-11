@@ -21,6 +21,7 @@ namespace WindowsFormsApplication1
         String aux;
         FrmPrincipalChofer frmConductor;
        FrmPrincipalFormularioProfesor frmProfesor;
+        FrmMenuPrincipalReportes frmMenuReportes;
 
 
         //FrmReporteHistorialKilometraje frmRep
@@ -158,6 +159,14 @@ namespace WindowsFormsApplication1
 
             }
         }
+
+        public void mostrarReportes(FormMenu frmMenu)
+        {
+            frmMenuReportes = new FrmMenuPrincipalReportes();
+            frmMenuReportes.AutoScroll = true;
+            mostrarMódulo(frmMenu, frmMenuReportes);
+        }
+
         public void mostrarNotificaciones(FormMenu frmMenu)
         {
             solicitudes = new solicitudesPendientes(aux);
