@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModuloFormularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,12 +35,14 @@ namespace WindowsFormsApplication1.ModuloFormularios
 
         private void Ingresar_Click(object sender, EventArgs e)
         {
-
+            FrmSolicitudDeViaje solicitudDeViaje = new FrmSolicitudDeViaje();
+            solicitudDeViaje.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            FrmCalificacionServicio calificacionServicio = new FrmCalificacionServicio();
+            calificacionServicio.Show();
         }
 
         private void label5_Click(object sender, EventArgs e)
