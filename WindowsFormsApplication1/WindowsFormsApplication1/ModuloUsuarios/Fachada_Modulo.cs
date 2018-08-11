@@ -152,7 +152,8 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                //                frmProfesor = new MainFormularioProfesor(usuario.IDusuario1 + "", usuario.Nombre);
+                frmProfesor = new FrmPrincipalFormularioProfesor();
+                mostrarMódulo(frmMenu, frmProfesor);
 
             }
         }
