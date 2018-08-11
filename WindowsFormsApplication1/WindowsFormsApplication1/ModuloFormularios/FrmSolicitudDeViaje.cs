@@ -68,7 +68,7 @@ namespace ModuloFormularios
                 destino = textBox2.Text + "," + comboBox1.SelectedItem.ToString();
                 //string idUsuario,string idmotivo, string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, int numeroPersonas
                 int idMotivo = comboBoxMotivos.SelectedIndex + 1;
-                CSSolicitudDeViaje solicitudDeViaje = new CSSolicitudDeViaje(idusuario, "" + idMotivo + 1, destino, dtf_salida.Text, dth_salida.Text, dtf_llegada.Text, dth_llegada.Text, Convert.ToInt32(textBox1.Text));
+                CSSolicitudDeViaje solicitudDeViaje = new CSSolicitudDeViaje(idusuario, "" + idMotivo, destino, dtf_salida.Text, dth_salida.Text, dtf_llegada.Text, dth_llegada.Text, Convert.ToInt32(textBox1.Text));
                 solicitudDeViaje.guardarEnBase();
                 this.Close();
             }
