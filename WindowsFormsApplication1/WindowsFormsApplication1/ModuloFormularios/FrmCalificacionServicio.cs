@@ -15,74 +15,46 @@ namespace ModuloFormularios
     {
         private CSCalificacionDeServicio calificacionServicio;
 
-        public FrmCalificacionServicio(string idUsuario, string [] reservas)
+        public FrmCalificacionServicio()
         {
             InitializeComponent();
             calificacionServicio = new CSCalificacionDeServicio();
-            crearCombo(reservas);
-            txt_nomConductor.Text= "JAPAN";
-        }
-
-        public void crearCombo(string[] reservas)
-        {
-            foreach (string reserva in reservas)
-            {
-                cb_reservas.Items.Add(reserva);
-                cb_reservas.SelectedItem = 2;
-            }
         }
 
         private void obtenerDatos(object sender, EventArgs e)
         {
-            if (cb_reservas.SelectedItem != null)
+            if (rb_puntSalidaT.Checked)
             {
-                calificacionServicio.setIdReserva(cb_reservas.SelectedItem+"");
-                if (rb_puntSalidaT.Checked)
-                {
-                    calificacionServicio.setPuntualSalida("SI");
-                }
-                else
-                {
-                    calificacionServicio.setPuntualSalida("NO");
-                }
-
-                if (rb_limpiezaT.Checked)
-                {
-                    calificacionServicio.setLimpiezaVehiculo("SI");
-                }
-                else
-                {
-                    calificacionServicio.setLimpiezaVehiculo("NO");
-                }
-                if (rb_puntLlegadaT.Checked)
-                {
-                    calificacionServicio.setPuntualAlDestino("SI");
-                }
-                else
-                {
-                    calificacionServicio.setPuntualAlDestino("NO");
-                }
-
-                if (rb_puntRetornoT.Checked)
-                {
-                    calificacionServicio.setPuntualAlRetorno("SI");
-                }
-                else
-                {
-                    calificacionServicio.setPuntualAlRetorno("NO");
-                }
-                if (!txt_comenAdicionales.Text.Equals(""))
-                {
-                    calificacionServicio.setComentariosAdicionales(txt_comenAdicionales.Text);
-                }
-                //MessageBox.Show(calificacionServicio.getPuntualAlDestino() + " " + calificacionServicio.getPuntualAlRetorno() + " " +
-                //                    calificacionServicio.getLimpiezaVehiculo() + " " + calificacionServicio.getPuntualSalida() + calificacionServicio.getComentariosAdicionales()
-                //    + " " + txt_nomConductor.Text + " " + cb_reservas.SelectedItem);
-
+                calificacionServicio.setPuntualSalida("SI");
             }
-            else{ 
-                MessageBox.Show("ERROR AL INGRESAR LOS DATOS");
+            else {
+                calificacionServicio.setPuntualSalida("NO");
+            }
 
+            if (rb_limpiezaT.Checked)
+            {
+                calificacionServicio.setLimpiezaVehiculo("SI");
+            }
+            else
+            {
+                calificacionServicio.setLimpiezaVehiculo("NO");
+            }
+            if (rb_puntLlegadaT.Checked) {
+                calificacionServicio.setPuntualAlDestino("SI");
+            } else {
+                calificacionServicio.setPuntualAlDestino("NO");
+            }
+
+            if (rb_puntRetornoT.Checked)
+{
+                calificacionServicio.setPuntualAlRetorno("SI");
+            }
+            else {
+                calificacionServicio.setPuntualAlRetorno("NO");
+            }
+            if (!txt_comenAdicionales.Text.Equals(""))
+            {
+                calificacionServicio.setComentariosAdicionales(txt_comenAdicionales.Text);
             }
         }
     }

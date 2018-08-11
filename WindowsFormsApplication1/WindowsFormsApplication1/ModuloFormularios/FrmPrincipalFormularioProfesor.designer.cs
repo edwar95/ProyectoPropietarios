@@ -82,6 +82,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(192, 208);
             this.label5.TabIndex = 3;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // Ingresar
             // 
@@ -127,7 +128,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(160, 35);
             this.button2.TabIndex = 5;
-            this.button2.Text = "CALIFICAR SERVICIO";
+            this.button2.Text = "LLENAR FORMULARIO";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
