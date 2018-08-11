@@ -18,34 +18,41 @@ namespace WindowsFormsApplication1
     {
 
 
-        Fachada_Modulo fm1;
+        GestiónModulos fm1;
         String auxuser;
 
 
-      
-        
-        public void iniciar(Fachada_Modulo fm)
+
+
+        public void iniciar(GestiónModulos fm)
         {
             fm1 = fm;
         }
 
-        
+        public FormMenu()
+        {
+            InitializeComponent();
+            
+
+        }
+
         public FormMenu(String user)
         {
             InitializeComponent();
             auxuser = user;
-            
+
         }
 
         private void iconCerrar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Está seguro de salir del sistema?", "AVISO", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                
+
                 Application.Exit();
             }
-            else { 
-            
+            else
+            {
+
             }
         }
 
@@ -66,9 +73,9 @@ namespace WindowsFormsApplication1
         }
 
 
-     
 
-        int LX, LY,SW,SH;
+
+        int LX, LY, SW, SH;
 
 
 
@@ -93,7 +100,7 @@ namespace WindowsFormsApplication1
         {
             //this.WindowState = FormWindowState.Normal;
             this.Size = new Size(SW, SH);
-            this.Location = new Point(LX,LY);
+            this.Location = new Point(LX, LY);
             iconmaximizar.Visible = true;
             iconrestaurar.Visible = false;
         }
@@ -103,7 +110,7 @@ namespace WindowsFormsApplication1
             this.WindowState = FormWindowState.Minimized;
         }
 
-       
+
 
 
         private void btnmenu_Click_1(object sender, EventArgs e)
@@ -116,8 +123,8 @@ namespace WindowsFormsApplication1
 
                 MenuVertical.Width = 57;
         }
-        
-         
+
+
 
         //private void Form1_Load(object sender, EventArgs e)
         //{
@@ -132,7 +139,7 @@ namespace WindowsFormsApplication1
         //private void mostrarlogoAlCerrarForm(object sender, FormClosedEventArgs e) {
         //    mostrarlogo();
         //}
-        
+
         //OPCION 2 CON PANELES
         //METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO  TIEMPO DE EJECUCION ----------------------------------------------------------
         private int tolerance = 15;
@@ -142,7 +149,7 @@ namespace WindowsFormsApplication1
 
         private void btnCerrarSesión_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -157,13 +164,13 @@ namespace WindowsFormsApplication1
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-           this.Show();
+            this.Show();
             this.toolCerrar.SetToolTip(cerrarSesión, "Clic para cerrar sesión");
         }
 
         private void cerrarSesión_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Desea Cerrar la sesión","Mensaje",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Desea Cerrar la sesión", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Hide();
                 FormLogin frmlogin = new FormLogin();
@@ -173,14 +180,14 @@ namespace WindowsFormsApplication1
             {
 
             }
-            
+
         }
 
         private void btnReservas_Click(object sender, EventArgs e)
         {
 
         }
-       // public void mostrarReportes(FormMenu frmMenu)
+        // public void mostrarReportes(FormMenu frmMenu)
         private void btnNotificaciones_Click(object sender, EventArgs e)
         {
             Conexion cn = new Conexion();
@@ -192,8 +199,8 @@ namespace WindowsFormsApplication1
 
             if (cargo == "3")
             {
-                fm1.mostrarNotificaciones(this); 
-               // solicitudesPendientes sol = new solicitudesPendientes(auxuser);
+                fm1.mostrarNotificaciones(this);
+                // solicitudesPendientes sol = new solicitudesPendientes(auxuser);
                 //sol.ShowDialog();
             }
 

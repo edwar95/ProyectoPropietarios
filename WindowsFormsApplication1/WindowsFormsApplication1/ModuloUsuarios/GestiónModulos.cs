@@ -10,7 +10,7 @@ using WindowsFormsApplication1.ModuloVehiculo.Formularios;
 
 namespace WindowsFormsApplication1
 {
-    public class Fachada_Modulo
+    public class GestiónModulos
     {
 
         Cargo cargo = new Cargo();
@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1
         //FrmReporteHistorialKilometraje frmRep
 
 
-        public Fachada_Modulo(FormMenu frm, String user)
+        public GestiónModulos(FormMenu frm, String user)
         {
 
 
@@ -50,38 +50,58 @@ namespace WindowsFormsApplication1
 
             if (cargo.IDcargo1 == 1)
             {
-                frm.btnNotificaciones.Visible = true;
+
+                frm.btnReservas.Visible = true;
                 frm.btnReportes.Visible = true;
-                frm.btnRutas.Visible = true;
-                frm.btnUser.Visible = true;
+                frm.btnNotificaciones.Visible = false;
                 frm.btnVehículos.Visible = true;
+                frm.btnRutas.Visible = true;
+                frm.btnIncidencias.Visible = true;
+                frm.btnForm.Visible = false;
 
 
             }
             else if (cargo.IDcargo1 == 2)
             {
-
+                frm.btnReservas.Visible = true;
+                frm.btnReportes.Visible = true;
+                frm.btnNotificaciones.Visible = false;
+                frm.btnVehículos.Visible = true;
+                frm.btnRutas.Visible = true;
+                frm.btnIncidencias.Visible = true;
+                frm.btnForm.Visible = false;
             }
             else if (cargo.IDcargo1 == 3)
             {
-
+                frm.btnReservas.Visible = false;
+                frm.btnReportes.Visible = false;
+                frm.btnNotificaciones.Visible = true;
+                frm.btnVehículos.Visible = false;
+                frm.btnRutas.Visible = false;
+                frm.btnIncidencias.Visible = false;
+                frm.btnForm.Visible = true;
             }
             else if (cargo.IDcargo1 == 4)
             {
-                frm.btnNotificaciones.Visible = false;
+                frm.btnReservas.Visible = false;
                 frm.btnReportes.Visible = false;
-                frm.btnRutas.Visible = false;
-                frm.btnUser.Visible = false;
+                frm.btnNotificaciones.Visible = false;
                 frm.btnVehículos.Visible = false;
+                frm.btnRutas.Visible = false;
+                frm.btnIncidencias.Visible = false;
+                frm.btnForm.Visible = true;
             }
             else
             {
-                frm.btnNotificaciones.Visible = false;
+                frm.btnReservas.Visible = false;
                 frm.btnReportes.Visible = false;
-                frm.btnRutas.Visible = true;
-                frm.btnUser.Visible = false;
+                frm.btnNotificaciones.Visible = false;
                 frm.btnVehículos.Visible = true;
+                frm.btnRutas.Visible = true;
+                frm.btnIncidencias.Visible = true;
+                frm.btnForm.Visible = true;
             }
+
 
 
             frm.lbCorreo.Text = usuario.Email;
