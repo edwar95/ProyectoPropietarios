@@ -1,4 +1,4 @@
-﻿namespace Dijkstra
+﻿namespace WindowsFormsApplication1.ModuloControlDeRutas
 {
     partial class AddNode
     {
