@@ -13,6 +13,7 @@ namespace WindowsFormsApplication1.ModuloFormularios
 {
     public partial class FrmPrincipalFormularioProfesor : Form
     {
+        Usuario usu;
         public FrmPrincipalFormularioProfesor()
         {
             InitializeComponent();
@@ -36,7 +37,12 @@ namespace WindowsFormsApplication1.ModuloFormularios
         private void Ingresar_Click(object sender, EventArgs e)
         {
             FrmSolicitudDeViaje solicitudDeViaje = new FrmSolicitudDeViaje();
+            //solicitudDeViaje.
             solicitudDeViaje.Show();
+        }
+
+        public void ponerUsuario(object usu) {
+            this.usu = (Usuario) usu;
         }
 
         private void button2_Click(object sender, EventArgs e)

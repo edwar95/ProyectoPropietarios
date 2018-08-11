@@ -18,17 +18,24 @@ namespace ModuloFormularios
     {
         private Conexion cnx = new Conexion();
         private SqlConnection conn;
-        private ArrayList idDestino = new ArrayList();
+        private string idusuario;
+        private string idmotivo;
         public FrmSolicitudDeViaje()
         {
             InitializeComponent();
             SqlDataReader reader = null;
             conn = new SqlConnection(cnx.stringConexion);
-           
-
         }
-        
-        
+
+        public void llenarFormulario(String nombre, string email) {
+            txt_ciSolicitante.Text = email;
+            txt_nombreSolicitante.Text = nombre;
+        }
+
+        public void ponerIDs(String idusuario,string idmotivo) {
+            this.idusuario = idusuario;
+            this.idmotivo = idmotivo;
+        }
         
         private void buttonGuardar_Click(object sender, EventArgs e)
         {

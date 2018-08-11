@@ -153,6 +153,7 @@ namespace WindowsFormsApplication1
             else
             {
                 frmProfesor = new FrmPrincipalFormularioProfesor();
+
                 mostrarMódulo(frmMenu, frmProfesor);
 
             }

@@ -32,7 +32,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.dth_salida = new System.Windows.Forms.DateTimePicker();
+            this.dtf_salida = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_ciSolicitante = new System.Windows.Forms.TextBox();
@@ -40,30 +43,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_nombreSolicitante = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxMotivos = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonCancelar = new System.Windows.Forms.Button();
-            this.buttonGuardar = new System.Windows.Forms.Button();
-            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBoxMotivos = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.dtf_llegada = new System.Windows.Forms.DateTimePicker();
             this.dth_llegada = new System.Windows.Forms.DateTimePicker();
-            this.dtf_salida = new System.Windows.Forms.DateTimePicker();
-            this.dth_salida = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dtf_llegada = new System.Windows.Forms.DateTimePicker();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonCancelar = new System.Windows.Forms.Button();
+            this.buttonGuardar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -75,9 +75,9 @@
             this.tableLayoutPanel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
+            this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
-            this.tableLayoutPanel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -139,6 +139,15 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(570, 37);
             this.tableLayoutPanel6.TabIndex = 4;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(165, 18);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Fecha y Hora de Salida:";
+            // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 2;
@@ -153,6 +162,25 @@
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(279, 31);
             this.tableLayoutPanel10.TabIndex = 1;
+            // 
+            // dth_salida
+            // 
+            this.dth_salida.CustomFormat = "hh:mm";
+            this.dth_salida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dth_salida.Location = new System.Drawing.Point(142, 3);
+            this.dth_salida.Name = "dth_salida";
+            this.dth_salida.ShowUpDown = true;
+            this.dth_salida.Size = new System.Drawing.Size(134, 24);
+            this.dth_salida.TabIndex = 2;
+            // 
+            // dtf_salida
+            // 
+            this.dtf_salida.AllowDrop = true;
+            this.dtf_salida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtf_salida.Location = new System.Drawing.Point(3, 3);
+            this.dtf_salida.Name = "dtf_salida";
+            this.dtf_salida.Size = new System.Drawing.Size(133, 24);
+            this.dtf_salida.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -183,6 +211,7 @@
             this.txt_ciSolicitante.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_ciSolicitante.Location = new System.Drawing.Point(288, 3);
             this.txt_ciSolicitante.Name = "txt_ciSolicitante";
+            this.txt_ciSolicitante.ReadOnly = true;
             this.txt_ciSolicitante.Size = new System.Drawing.Size(279, 24);
             this.txt_ciSolicitante.TabIndex = 1;
             // 
@@ -215,6 +244,7 @@
             this.txt_nombreSolicitante.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_nombreSolicitante.Location = new System.Drawing.Point(288, 3);
             this.txt_nombreSolicitante.Name = "txt_nombreSolicitante";
+            this.txt_nombreSolicitante.ReadOnly = true;
             this.txt_nombreSolicitante.Size = new System.Drawing.Size(279, 24);
             this.txt_nombreSolicitante.TabIndex = 1;
             // 
@@ -233,14 +263,47 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(570, 37);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
-            // label3
+            // label9
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 18);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Destino:";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 18);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Provincia:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            "Azual",
+            "Bolívar",
+            "Cañar",
+            "Carchi",
+            "Chimborazo",
+            "Cotopaxi",
+            "El Oro",
+            "Esmeraldas",
+            "Galápagos",
+            "Guayas",
+            "Imbabura",
+            "Loja",
+            "Los Ríos",
+            "Manabí",
+            "Morona Santiago",
+            "Napo",
+            "Orellana",
+            "Pastaza",
+            "Pichincha",
+            "Santa Elena",
+            "Santo Domingo de los Tsáchilas",
+            "Sucumbíos",
+            "Tungurahua",
+            "Zamora Chinchipe"});
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(288, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(279, 26);
+            this.comboBox1.TabIndex = 1;
             // 
             // tableLayoutPanel5
             // 
@@ -257,14 +320,21 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(570, 37);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
-            // label4
+            // label3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(165, 18);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Fecha y Hora de Salida:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 18);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Destino:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(288, 3);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(279, 24);
+            this.textBox2.TabIndex = 1;
             // 
             // label7
             // 
@@ -293,14 +363,23 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(570, 41);
             this.tableLayoutPanel8.TabIndex = 7;
             // 
-            // label6
+            // comboBoxMotivos
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 18);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Número De Personas:";
+            this.comboBoxMotivos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxMotivos.FormattingEnabled = true;
+            this.comboBoxMotivos.Location = new System.Drawing.Point(288, 3);
+            this.comboBoxMotivos.Name = "comboBoxMotivos";
+            this.comboBoxMotivos.Size = new System.Drawing.Size(279, 26);
+            this.comboBoxMotivos.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 18);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Motivo:";
             // 
             // panel1
             // 
@@ -326,14 +405,47 @@
             this.tableLayoutPanel11.Size = new System.Drawing.Size(570, 37);
             this.tableLayoutPanel11.TabIndex = 6;
             // 
-            // label8
+            // label5
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 18);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Motivo:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(179, 18);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Fecha y Hora de Retorno:";
+            // 
+            // tableLayoutPanel13
+            // 
+            this.tableLayoutPanel13.ColumnCount = 2;
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Controls.Add(this.dth_llegada, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.dtf_llegada, 0, 0);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(288, 3);
+            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
+            this.tableLayoutPanel13.RowCount = 1;
+            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel13.Size = new System.Drawing.Size(279, 31);
+            this.tableLayoutPanel13.TabIndex = 2;
+            // 
+            // dth_llegada
+            // 
+            this.dth_llegada.AccessibleRole = System.Windows.Forms.AccessibleRole.Clock;
+            this.dth_llegada.CustomFormat = "hh:mm";
+            this.dth_llegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dth_llegada.Location = new System.Drawing.Point(142, 3);
+            this.dth_llegada.Name = "dth_llegada";
+            this.dth_llegada.ShowUpDown = true;
+            this.dth_llegada.Size = new System.Drawing.Size(133, 24);
+            this.dth_llegada.TabIndex = 3;
+            // 
+            // dtf_llegada
+            // 
+            this.dtf_llegada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtf_llegada.Location = new System.Drawing.Point(3, 3);
+            this.dtf_llegada.Name = "dtf_llegada";
+            this.dtf_llegada.Size = new System.Drawing.Size(133, 24);
+            this.dtf_llegada.TabIndex = 2;
             // 
             // tableLayoutPanel7
             // 
@@ -348,6 +460,37 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(570, 35);
             this.tableLayoutPanel7.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(288, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(279, 24);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(157, 18);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Número De Personas:";
+            // 
+            // tableLayoutPanel12
+            // 
+            this.tableLayoutPanel12.ColumnCount = 2;
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Controls.Add(this.buttonCancelar, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.buttonGuardar, 0, 0);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(5, 431);
+            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
+            this.tableLayoutPanel12.RowCount = 1;
+            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel12.Size = new System.Drawing.Size(570, 38);
+            this.tableLayoutPanel12.TabIndex = 10;
             // 
             // buttonCancelar
             // 
@@ -376,122 +519,6 @@
             this.buttonGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
-            // 
-            // tableLayoutPanel12
-            // 
-            this.tableLayoutPanel12.ColumnCount = 2;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Controls.Add(this.buttonCancelar, 1, 0);
-            this.tableLayoutPanel12.Controls.Add(this.buttonGuardar, 0, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(5, 431);
-            this.tableLayoutPanel12.Name = "tableLayoutPanel12";
-            this.tableLayoutPanel12.RowCount = 1;
-            this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Size = new System.Drawing.Size(570, 38);
-            this.tableLayoutPanel12.TabIndex = 10;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(288, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(279, 24);
-            this.textBox1.TabIndex = 3;
-            // 
-            // comboBoxMotivos
-            // 
-            this.comboBoxMotivos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBoxMotivos.FormattingEnabled = true;
-            this.comboBoxMotivos.Location = new System.Drawing.Point(288, 3);
-            this.comboBoxMotivos.Name = "comboBoxMotivos";
-            this.comboBoxMotivos.Size = new System.Drawing.Size(279, 26);
-            this.comboBoxMotivos.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(179, 18);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Fecha y Hora de Retorno:";
-            // 
-            // tableLayoutPanel13
-            // 
-            this.tableLayoutPanel13.ColumnCount = 2;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Controls.Add(this.dth_llegada, 0, 0);
-            this.tableLayoutPanel13.Controls.Add(this.dtf_llegada, 0, 0);
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(288, 3);
-            this.tableLayoutPanel13.Name = "tableLayoutPanel13";
-            this.tableLayoutPanel13.RowCount = 1;
-            this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Size = new System.Drawing.Size(279, 31);
-            this.tableLayoutPanel13.TabIndex = 2;
-            // 
-            // dtf_llegada
-            // 
-            this.dtf_llegada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtf_llegada.Location = new System.Drawing.Point(3, 3);
-            this.dtf_llegada.Name = "dtf_llegada";
-            this.dtf_llegada.Size = new System.Drawing.Size(133, 24);
-            this.dtf_llegada.TabIndex = 2;
-            // 
-            // dth_llegada
-            // 
-            this.dth_llegada.AccessibleRole = System.Windows.Forms.AccessibleRole.Clock;
-            this.dth_llegada.CustomFormat = "hh:mm";
-            this.dth_llegada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dth_llegada.Location = new System.Drawing.Point(142, 3);
-            this.dth_llegada.Name = "dth_llegada";
-            this.dth_llegada.ShowUpDown = true;
-            this.dth_llegada.Size = new System.Drawing.Size(133, 24);
-            this.dth_llegada.TabIndex = 3;
-            // 
-            // dtf_salida
-            // 
-            this.dtf_salida.AllowDrop = true;
-            this.dtf_salida.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtf_salida.Location = new System.Drawing.Point(3, 3);
-            this.dtf_salida.Name = "dtf_salida";
-            this.dtf_salida.Size = new System.Drawing.Size(133, 24);
-            this.dtf_salida.TabIndex = 1;
-            // 
-            // dth_salida
-            // 
-            this.dth_salida.CustomFormat = "hh:mm";
-            this.dth_salida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dth_salida.Location = new System.Drawing.Point(142, 3);
-            this.dth_salida.Name = "dth_salida";
-            this.dth_salida.ShowUpDown = true;
-            this.dth_salida.Size = new System.Drawing.Size(134, 24);
-            this.dth_salida.TabIndex = 2;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(288, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(279, 26);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 18);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Provincia:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(288, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(279, 24);
-            this.textBox2.TabIndex = 1;
             // 
             // FrmSolicitudDeViaje
             // 
@@ -522,11 +549,11 @@
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
+            this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel12.PerformLayout();
-            this.tableLayoutPanel13.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
