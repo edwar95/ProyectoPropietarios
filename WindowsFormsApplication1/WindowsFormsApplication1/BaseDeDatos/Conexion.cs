@@ -35,9 +35,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("no se conecto a la base");
 
             }
-
-
-
         }
         public void query(String consulta)
         {
@@ -82,7 +79,41 @@ namespace WindowsFormsApplication1
             da.Fill(dt2);
             return dt2;
         }
-      
-       
+
+
+
+
+
+
+
+
+
+
+
+        public void Conectar()
+        {
+            try
+            {
+                cn = new SqlConnection(stringConexion);
+                cn.Open();
+                //MessageBox.Show("CONECTADO");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("no se conecto a la base");
+
+            }
+
+        }
+
+        public SqlConnection getConnection()
+        {
+            return cn;
+        }
+
+        public void Desconectar()
+        {
+            cn.Close();
+        }
     }
 }

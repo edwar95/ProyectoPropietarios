@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
         private string fechaFin;
         private string estado;
         private int idSolicitante;
-        ConexionSQL coneccion;
+        Conexion coneccion;
         Viaje viaje;
 
         public Reserva()

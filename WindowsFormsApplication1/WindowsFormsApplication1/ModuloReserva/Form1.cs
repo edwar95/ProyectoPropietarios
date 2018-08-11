@@ -15,14 +15,14 @@ namespace WindowsFormsApplication1
     public partial class Form1 : Form
     {
         Reserva reserva;
-        ConexionSQL coneccion;
+        Conexion coneccion;
 
         
         public Form1()
         {
             InitializeComponent();
             confirmarBtn.Enabled = false;
-            coneccion = new ConexionSQL();
+            coneccion = new Conexion();
             reserva= new Reserva();
         }
 

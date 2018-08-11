@@ -14,7 +14,7 @@ namespace WindowsFormsApplication1
         Fecha fecha;
         Vehiculo vehiculo;
         Chofer chofer;
-        ConexionSQL coneccion;
+        Conexion coneccion;
 
         internal Chofer Chofer
         {
@@ -47,7 +47,7 @@ namespace WindowsFormsApplication1
             fecha = new Fecha();
             Vehiculo = new Vehiculo();
             Chofer = new Chofer();
-            coneccion = new ConexionSQL();
+            coneccion = new Conexion();
 
         }
 
