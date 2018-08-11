@@ -61,6 +61,7 @@ namespace WindowsFormsApplication1
         public void rechazar(String reserva)
         {
             Conexion conect = new Conexion();
+
             conect.query(" update solicitudreserva set estadosolicitud='rechazada' where idsolicitudreserva=" + reserva + ";");
             Conexion cn = new Conexion();
 
