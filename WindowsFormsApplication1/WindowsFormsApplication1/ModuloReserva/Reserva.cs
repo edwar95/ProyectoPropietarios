@@ -25,8 +25,8 @@ namespace WindowsFormsApplication1
 
         public Reserva()
         {
-            
-            coneccion = new ConexionSQL();
+
+            coneccion = new Conexion();
             viaje = new Viaje();
 
         }
@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        
+
 
         public string FechaInicio
         {
@@ -140,31 +140,68 @@ namespace WindowsFormsApplication1
 
         public bool confirmarViaje()
         {
-            
+            Boolean cv= false;
             viaje.asignarFecha(this.FechaInicio, this.FechaFin);
             viaje.asignarChofer(this.NumeroPersonas);
             viaje.asignarVehiculo(this.NumeroPersonas);
 
 
-            if(viaje.validarChoferVehiculo(viaje.asignarChofer(this.NumeroPersonas), viaje.asignarVehiculo(this.NumeroPersonas)))
+            if (viaje.validarChoferVehiculo(viaje.asignarChofer(this.NumeroPersonas), viaje.asignarVehiculo(this.NumeroPersonas)))
             {
+                cv = true;
                 registrarReservaAprovada();
             }
 
-            return viaje.validarChoferVehiculo(viaje.asignarChofer(this.NumeroPersonas), viaje.asignarVehiculo(this.NumeroPersonas));
-
+            return cv;
         }
 
         public void registrarReservaAprovada()
         {
             this.estado = "aprobada2";
             coneccion.Conectar();
-            SqlCommand cmd = new SqlCommand("INSERT INTO RESERVAAPROBADA ( IDCHOFER,IDVEHICULO,IDMOTIVOVIAJE,IDCATEGORIAUSUARIO,NUMEROPERSONAS,FECHASALIDA,FECHARETORNO,ESTADOSOLICITUD) VALUES (" + viaje.Chofer.IdChofer+ "," + viaje.Vehiculo.IdVehiculo + "," + this.idMotivoViaje +"," + this.idCategoriaUsuario + "," + this.numeroPersonas +",convert(datetime, '" + this.fechaInicio + "', 102),convert(datetime, '" + this.fechaFin + "', 102), '" + this.estado+ "') ", coneccion.getConnection());
+            Console.WriteLine(this.fechaInicio);
+            SqlCommand cmd = new SqlCommand("INSERT INTO RESERVAAPROBADA ( IDCHOFER,IDVEHICULO,IDMOTIVOVIAJE,IDSOLICITANTE,NUMEROPERSONAS,FECHASALIDA,FECHARETORNO,ESTADOSOLICITUD, IDSOLICITUDRESERVA) VALUES (" + viaje.Chofer.IdChofer + "," + viaje.Vehiculo.IdVehiculo + "," + this.idMotivoViaje + "," + this.idCategoriaUsuario + "," + this.numeroPersonas + ",'" + this.fechaInicio + "','" + this.fechaFin + "', '" + this.estado + "'," + this.idReserva + ") ", coneccion.getConnection());
             cmd.ExecuteNonQuery();
-            coneccion.Desconectar();
 
         }
-        
+
+        public void reservar(Reserva reserva)
+        {
+            
+            if (reserva.confirmarViaje())
+            {
+                reserva.Estado = "aprobada2";
+                SqlCommand cmd = new SqlCommand("UPDATE SolicitudReserva SET estadoSolicitud= '" + reserva.Estado + "' WHERE idSolicitudReserva=" + reserva.IdReserva, coneccion.getConnection());
+                cmd.ExecuteNonQuery();
+
+
+                String email;
+                SqlCommand cmdAux = new SqlCommand("select email from Usuarios WHERE IDusuario=" + reserva.IdCategoriaUsuario, coneccion.getConnection());
+                email =(String)cmdAux.ExecuteScalar();
+
+                Console.WriteLine(email);
+                coneccion.Desconectar();
+
+                NotificacionUsuario notificacion = new NotificacionUsuario();
+                notificacion.NotificacionSolicitudAprobada(email, "Aprobación de reserva", "" + reserva.Estado);
+            }
+            else
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE SolicitudReserva SET estadoSolicitud= 'rechazado' WHERE idSolicitudReserva=" + reserva.IdReserva, coneccion.getConnection());
+                cmd.ExecuteNonQuery();
+
+
+                String email;
+                SqlCommand cmdAux = new SqlCommand("select email from Usuarios WHERE IDusuario=" + reserva.IdCategoriaUsuario, coneccion.getConnection());
+
+                email = (String)cmdAux.ExecuteScalar();
+                coneccion.Desconectar();
+
+
+                NotificacionUsuario notificacion = new NotificacionUsuario();
+                notificacion.NotificacionSolicitudAprobada(email, "Aprobación de reserva", "" + reserva.Estado);
+            }
+        }
 
 
     }

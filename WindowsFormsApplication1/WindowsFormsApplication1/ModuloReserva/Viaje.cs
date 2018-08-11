@@ -58,36 +58,34 @@ namespace WindowsFormsApplication1
 
             if (NumeroPersonas <= 5)
             {
-                SqlCommand cmd = new SqlCommand("select * from CHOFER where TIPOLICENCIA = 'B' and IDCHOFER not in (select IDCHOFER from RESERVAAPROBADA where (convert(datetime, '" + fecha.FechaInicio+ "', 102) between FECHASALIDA and FECHARETORNO) and(convert(datetime, '" + fecha.FechaFin + "', 102) between FECHASALIDA and FECHARETORNO) )", coneccion.getConnection());
+                SqlCommand cmd = new SqlCommand("select * from CHOFER where TIPOLICENCIA = 'B' and IDCHOFER not in (select IDCHOFER from RESERVAAPROBADA where ('" + fecha.FechaInicio+ "'between FECHASALIDA and FECHARETORNO) and('" + fecha.FechaFin + "'between FECHASALIDA and FECHARETORNO) )", coneccion.getConnection());
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (!reader.Read())
                 {
                     Console.WriteLine("No hay choferes disponibles");
+                    return false;
                 }
                 else
                 {
-                    Chofer.IdChofer = reader.GetInt32(0);
-                    Chofer.NombreChofer = reader.GetString(3);
-                    Chofer.ApellidoChofer = reader.GetString(2);
-                    Chofer.CedulaChofer = reader.GetString(1);
+                    Chofer.IdChofer = reader.GetInt32(3);
+                    Chofer.NombreChofer = reader.GetString(2);
                     return true;
                 }
                 coneccion.Desconectar();
             }
             else if (NumeroPersonas > 5)
             {
-                SqlCommand cmd = new SqlCommand("select * from CHOFER where TIPOLICENCIA = 'C' and IDCHOFER not in (select IDCHOFER from RESERVAAPROBADA where (convert(datetime, '" + fecha.FechaInicio + "', 102)between FECHASALIDA and FECHARETORNO) and(convert(datetime, '" + fecha.FechaFin + "', 102)between FECHASALIDA and FECHARETORNO) )", coneccion.getConnection());
+                SqlCommand cmd = new SqlCommand("select * from CHOFER where TIPOLICENCIA = 'C' and IDCHOFER not in (select IDCHOFER from RESERVAAPROBADA where ('" + fecha.FechaInicio + "'between FECHASALIDA and FECHARETORNO) and('" + fecha.FechaFin + "'between FECHASALIDA and FECHARETORNO) )", coneccion.getConnection());
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (!reader.Read())
                 {
                     Console.WriteLine("No hay choferes disponibles");
+                    return false;
                 }
                 else
                 {
-                    Chofer.IdChofer = reader.GetInt32(0);
-                    Chofer.NombreChofer = reader.GetString(3);
-                    Chofer.ApellidoChofer = reader.GetString(2);
-                    Chofer.CedulaChofer = reader.GetString(1);
+                    Chofer.IdChofer = reader.GetInt32(3);
+                    Chofer.NombreChofer = reader.GetString(2);
                     return true;
                 }
                 coneccion.Desconectar();
@@ -104,11 +102,12 @@ namespace WindowsFormsApplication1
 
             if (NumeroPersonas <= 5)
             {
-                SqlCommand cmd = new SqlCommand("select * from VEHICULO where TIPOVEHICULO = 'auto' and IDVEHICULO not in (select IDVEHICULO from RESERVAAPROBADA where (convert(datetime, '" + fecha.FechaInicio + "', 102)between FECHASALIDA and FECHARETORNO) and(convert(datetime, '" + fecha.FechaFin + "', 102)between FECHASALIDA and FECHARETORNO) )", coneccion.getConnection());
+                SqlCommand cmd = new SqlCommand("select * from VEHICULO where TIPOVEHICULO = 'auto' and IDVEHICULO not in (select IDVEHICULO from RESERVAAPROBADA where ( '" + fecha.FechaInicio + "'between FECHASALIDA and FECHARETORNO) and('" + fecha.FechaFin + "'between FECHASALIDA and FECHARETORNO) )", coneccion.getConnection());
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (!reader.Read())
                 {
                     Console.WriteLine("No hay vehiculos disponibles");
+                    return false;
                 }
                 else
                 {
@@ -122,11 +121,12 @@ namespace WindowsFormsApplication1
             }
             else if (NumeroPersonas > 5)
             {
-                SqlCommand cmd = new SqlCommand("select * from VEHICULO where TIPOVEHICULO = 'bus' and IDVEHICULO not in (select IDVEHICULO from RESERVAAPROBADA where (convert(datetime, '" + fecha.FechaInicio + "', 102)between FECHASALIDA and FECHARETORNO) and(convert(datetime, '" + fecha.FechaFin + "', 102)between FECHASALIDA and FECHARETORNO) )", coneccion.getConnection());
+                SqlCommand cmd = new SqlCommand("select * from VEHICULO where TIPOVEHICULO = 'bus' and IDVEHICULO not in (select IDVEHICULO from RESERVAAPROBADA where ('" + fecha.FechaInicio + "'between FECHASALIDA and FECHARETORNO) and('" + fecha.FechaFin + "' between FECHASALIDA and FECHARETORNO) )", coneccion.getConnection());
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (!reader.Read())
                 {
                     Console.WriteLine("No hay vehiculos disponibles");
+                    return false;
                 }
                 else
                 {
@@ -155,7 +155,7 @@ namespace WindowsFormsApplication1
         public bool validarChoferVehiculo(bool chofer, bool vehiculo )
         {
 
-            if (chofer && vehiculo)
+            if (chofer==true && vehiculo== true)
             {
                 return true;
             }

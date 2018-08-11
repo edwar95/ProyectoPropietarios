@@ -56,21 +56,21 @@ namespace WindowsFormsApplication1
                     reserva.NumeroPersonas = reader.GetInt32(4);
                     numPersonas.Value = reserva.NumeroPersonas;
 
-                    reserva.IdMotivoViaje = reader.GetInt32(1);
+                    reserva.IdMotivoViaje = reader.GetInt32(2);
                     motivoViajeTxt.Text = reserva.IdMotivoViaje.ToString();
 
-                    reserva.IdCategoriaUsuario = reader.GetInt32(2);
+                    reserva.IdCategoriaUsuario = reader.GetInt32(1);
                     tipoUsr.Text = reserva.IdCategoriaUsuario.ToString();
 
-                    reserva.FechaInicio = reader.GetDateTime(5).ToString("yyyy.MM.dd");
+                    reserva.FechaInicio = reader.GetDateTime(5).ToString();
                     fechaIni.Value = Convert.ToDateTime(reserva.FechaInicio);
 
-                    reserva.FechaFin = reader.GetDateTime(6).ToString("yyyy.MM.dd");
+                    reserva.FechaFin = reader.GetDateTime(6).ToString();
                     fechaFinaliza.Value = Convert.ToDateTime(reserva.FechaFin);
 
                     reserva.Estado = reader.GetString(7);
 
-                    
+                    Console.WriteLine(reserva.FechaInicio);                    
 
                     confirmarBtn.Enabled = true;
                 }
@@ -88,43 +88,8 @@ namespace WindowsFormsApplication1
 
         private void confirmarBtn_Click(object sender, EventArgs e)
         {
+            reserva.reservar(this.reserva);
 
-            coneccion.Conectar();
-            if (reserva.confirmarViaje())
-            {
-                reserva.Estado = "aprobada2";
-                SqlCommand cmd = new SqlCommand("UPDATE SolicitudReserva SET estadoSolicitud= '"+reserva.Estado+"' WHERE idSolicitudReserva=" + reserva.IdReserva, coneccion.getConnection());
-                cmd.ExecuteNonQuery();
-                
-
-                String email;
-                SqlCommand cmdAux = new SqlCommand("select email from Solicitante WHERE idSolicitante=" + reserva.IdCategoriaUsuario , coneccion.getConnection());
-                email = "davidmoralesP1995@hotmail.com";//(String)cmdAux.ExecuteScalar();
-
-                Console.WriteLine(email);
-                coneccion.Desconectar();
-
-                NotificacionUsuario notificacion = new NotificacionUsuario();
-                notificacion.NotificacionSolicitudAprobada(email,"Aprobación de reserva",""+reserva.Estado);
-            }
-            else
-            {
-                SqlCommand cmd = new SqlCommand("UPDATE SolicitudReserva SET estadoSolicitud= 'rechazado' WHERE idSolicitudReserva=" + reserva.IdReserva, coneccion.getConnection());
-                cmd.ExecuteNonQuery();
-                
-
-                String email;
-                SqlCommand cmdAux = new SqlCommand("select email from Solicitante WHERE idSolicitante=" + reserva.IdCategoriaUsuario, coneccion.getConnection());
-                SqlDataReader readerAux = cmd.ExecuteReader();
-
-                email = readerAux.GetString(0);
-                coneccion.Desconectar();
-
-
-                NotificacionUsuario notificacion = new NotificacionUsuario();
-                notificacion.NotificacionSolicitudAprobada(email, "Rechazo de reserva", "" + reserva.Estado);
-            }
-            
             numReservaTxt.Clear();
             numPersonas.Value = 0;
             motivoViajeTxt.Clear();
