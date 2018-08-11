@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
         solicitudesPendientes solicitudes;
         String aux;
         FrmPrincipalChofer frmConductor;
-       FrmPrincipalFormularioProfesor frmProfesor;
+        FrmPrincipalFormularioProfesor frmProfesor;
 
 
         //FrmReporteHistorialKilometraje frmRep
