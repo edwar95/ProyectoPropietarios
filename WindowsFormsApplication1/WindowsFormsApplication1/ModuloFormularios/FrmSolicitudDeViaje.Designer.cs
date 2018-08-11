@@ -44,6 +44,7 @@
             this.txt_nombreSolicitante = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -63,7 +64,6 @@
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -271,6 +271,39 @@
             this.label9.Size = new System.Drawing.Size(73, 18);
             this.label9.TabIndex = 2;
             this.label9.Text = "Provincia:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Azual",
+            "Bolívar",
+            "Cañar",
+            "Carchi",
+            "Chimborazo",
+            "Cotopaxi",
+            "El Oro",
+            "Esmeraldas",
+            "Galápagos",
+            "Guayas",
+            "Imbabura",
+            "Loja",
+            "Los Ríos",
+            "Manabí",
+            "Morona Santiago",
+            "Napo",
+            "Orellana",
+            "Pastaza",
+            "Pichincha",
+            "Santa Elena",
+            "Santo Domingo de los Tsáchilas",
+            "Sucumbíos",
+            "Tungurahua",
+            "Zamora Chinchipe"});
+            this.comboBox1.Location = new System.Drawing.Point(288, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(278, 26);
+            this.comboBox1.TabIndex = 3;
             // 
             // tableLayoutPanel5
             // 
@@ -486,39 +519,6 @@
             this.buttonGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Azual",
-            "Bolívar",
-            "Cañar",
-            "Carchi",
-            "Chimborazo",
-            "Cotopaxi",
-            "El Oro",
-            "Esmeraldas",
-            "Galápagos",
-            "Guayas",
-            "Imbabura",
-            "Loja",
-            "Los Ríos",
-            "Manabí",
-            "Morona Santiago",
-            "Napo",
-            "Orellana",
-            "Pastaza",
-            "Pichincha",
-            "Santa Elena",
-            "Santo Domingo de los Tsáchilas",
-            "Sucumbíos",
-            "Tungurahua",
-            "Zamora Chinchipe"});
-            this.comboBox1.Location = new System.Drawing.Point(288, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(278, 26);
-            this.comboBox1.TabIndex = 3;
             // 
             // FrmSolicitudDeViaje
             // 

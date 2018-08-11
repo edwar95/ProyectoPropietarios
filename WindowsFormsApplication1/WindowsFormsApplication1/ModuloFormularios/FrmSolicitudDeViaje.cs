@@ -63,10 +63,11 @@ namespace ModuloFormularios
         
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            destino = textBox2.Text + "," + comboBox1.SelectedItem.ToString() + ",Ecuador";
+            destino = textBox2.Text + "," + comboBox1.SelectedItem.ToString();
             //string idUsuario,string idmotivo, string destino, string fechaSalida, string horaSalida, string fechaRetorno, string horaRetorno, int numeroPersonas
             CSSolicitudDeViaje solicitudDeViaje = new CSSolicitudDeViaje(idusuario,""+comboBoxMotivos.SelectedIndex+1,destino,dtf_salida.Text, dth_salida.Text, dtf_llegada.Text, dth_llegada.Text, Convert.ToInt32(textBox1.Text));
             solicitudDeViaje.guardarEnBase();
+            this.Close();
         }
     }
 }
