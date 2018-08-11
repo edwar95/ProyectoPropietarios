@@ -24,6 +24,7 @@ namespace WindowsFormsApplication1
             confirmarBtn.Enabled = false;
             coneccion = new Conexion();
             reserva= new Reserva();
+            coneccion.CargarDatos("select*from solicitudReserva where estadoSolicitud='aprobada1'", dataGridView1);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -75,6 +76,10 @@ namespace WindowsFormsApplication1
                     confirmarBtn.Enabled = true;
                 }
 
+                SqlCommand cmdAux1 = new SqlCommand("select nombre from Usuarios WHERE IDusuario=" + reserva.IdCategoriaUsuario, coneccion.getConnection());
+                reserva.NombreSolicitante = (String)cmdAux1.ExecuteScalar();
+                nombreText.Text = reserva.NombreSolicitante.ToString();
+
             }
             else
             {
@@ -99,7 +104,6 @@ namespace WindowsFormsApplication1
             
 
         }
-
-      
+        
     }
 }

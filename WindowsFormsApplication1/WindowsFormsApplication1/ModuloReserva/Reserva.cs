@@ -20,6 +20,7 @@ namespace WindowsFormsApplication1
         private string fechaFin;
         private string estado;
         private int idSolicitante;
+        private string nombreSolicitante;
         Conexion coneccion;
         Viaje viaje;
 
@@ -137,6 +138,8 @@ namespace WindowsFormsApplication1
                 idSolicitante = value;
             }
         }
+
+        public string NombreSolicitante { get => nombreSolicitante; set => nombreSolicitante = value; }
 
         public bool confirmarViaje()
         {
