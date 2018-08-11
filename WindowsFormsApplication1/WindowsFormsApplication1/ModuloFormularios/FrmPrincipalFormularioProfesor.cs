@@ -38,6 +38,8 @@ namespace WindowsFormsApplication1.ModuloFormularios
         {
             FrmSolicitudDeViaje solicitudDeViaje = new FrmSolicitudDeViaje();
             solicitudDeViaje.llenarFormulario(usu.Nombre,usu.Email);
+            solicitudDeViaje.llenarMotivos();
+            solicitudDeViaje.ponerIDs(""+usu.IDusuario1);
             solicitudDeViaje.Show();
         }
 

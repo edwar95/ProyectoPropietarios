@@ -144,17 +144,17 @@ namespace WindowsFormsApplication1.ModuloFormularios
 
 
         public void guardarEnBase() {
+            DateTime thisDay = DateTime.Today;
+            String sql = "insert into SolicitudReservaTest(idMotivoViaje,idUsuario,Lugar,numeroPersonas,fechaSalida,fechaRetorno,estadoSolicitud,fechaReserva) " +
+                    "values(" + idmotivo + "," + idUsuario + ",'" + destino + "'," + numeroPersonas + ",'" + fechaSalida + " " + horaSalida + "','" + fechaRetorno + " " + horaRetorno + "','en espera','" + thisDay.ToString() + "')";
             try
             {
-                DateTime thisDay = DateTime.Today;
+                
                 cnx = new Conexion();
                 conn = new SqlConnection(cnx.stringConexion);
                 conn.Open();
-                String sql = "insert into SolicitudReservaTest(idMotivoViaje,idUsuario,Lugar,numeroPersonas,fechaSalida,fechaRetorno,estadoSolicitud,fechaReserva) " +
-                    "values(" + idmotivo + "," + idUsuario + ",'" + destino + "'," +  numeroPersonas + ",'" + fechaSalida +" "+horaSalida+"','" + fechaRetorno + " " + horaRetorno + "','en espera','" +thisDay.ToString() + "')";
                 SqlCommand comando = new SqlCommand(sql, conn);
                 int resultado = comando.ExecuteNonQuery();
-                MessageBox.Show("" + sql);
             }
             catch (Exception er)
             {
