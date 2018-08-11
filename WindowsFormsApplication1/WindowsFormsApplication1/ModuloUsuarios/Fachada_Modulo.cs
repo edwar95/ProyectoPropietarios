@@ -146,13 +146,15 @@ namespace WindowsFormsApplication1
         {
             if (usuario.IDcargo1 == 5)
             {
-                frmConductor = new FrmPrincipalChofer();
+                frmConductor = new FrmPrincipalChofer(usuario.IDusuario1 + "", usuario.Nombre);
                 //(((usuario.IDusuario1+"", usuario.Nombre);
                 mostrarMódulo(frmMenu, frmConductor);
             }
             else
             {
-                //                frmProfesor = new MainFormularioProfesor(usuario.IDusuario1 + "", usuario.Nombre);
+                frmProfesor = new FrmPrincipalFormularioProfesor();
+                frmProfesor.ponerUsuario(usuario);
+                mostrarMódulo(frmMenu, frmProfesor);
 
             }
         }

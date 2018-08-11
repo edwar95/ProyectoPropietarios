@@ -113,11 +113,11 @@ namespace WindowsFormsApplication1.ModuloFormularios
                 if (comentariosAdicionales==null)
                 {
                     //idReserva debe ser verificado (hace relacion a la tabla de solicitud servicio)
-                    sql = "insert into CalificiacionDeServicio (idReserva, puntualSalida, limpiezaVehiculo, puntualAlDestino, puntualAlRetorno) values("+idReserva + "," + puntualSalida + "," + limpiezaVehiculo + "," + puntualAlDestino + "," + puntualAlRetorno + ")";
+                    sql = "insert into Calificiacion_Servicio (idReservaAprob, puntualSalida, limpieza, puntualDestino, puntualRetorno) values("+idReserva + "," + puntualSalida + "," + limpiezaVehiculo + "," + puntualAlDestino + "," + puntualAlRetorno + ")";
                 }
                 else
                 {
-                    sql = "insert into CalificiacionDeServicio (idReserva, puntualSalida, limpiezaVehiculo, puntualAlDestino, puntualAlRetorno, ComentarioAdicional) values(" + idReserva + "," + puntualSalida + "," + limpiezaVehiculo + "," + puntualAlDestino + "," + puntualAlRetorno + ","+ comentariosAdicionales+")";
+                    sql = "insert into Calificiacion_Servicio (idReservaAprob, puntualSalida, limpieza, puntualDestino, puntualRetorno, comentarioAdicional) values(" + idReserva + "," + puntualSalida + "," + limpiezaVehiculo + "," + puntualAlDestino + "," + puntualAlRetorno + ","+ comentariosAdicionales+")";
                 }
 
                 SqlCommand comando = new SqlCommand(sql, conn);
