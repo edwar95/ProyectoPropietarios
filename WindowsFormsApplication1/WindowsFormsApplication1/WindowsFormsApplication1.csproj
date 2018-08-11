@@ -173,86 +173,6 @@
     <Compile Include="ModuloNotificaciones\Patrón\Estado.cs" />
     <Compile Include="ModuloNotificaciones\Patrón\Pendiente.cs" />
     <Compile Include="ModuloNotificaciones\Patrón\Rechazado.cs" />
-    <Compile Include="ModuloRutas\AddNode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloRutas\AddNode.Designer.cs">
-      <DependentUpon>AddNode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloRutas\DataBase\Ruta.Designer.cs">
-      <DependentUpon>Ruta.xsd</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="ModuloRutas\DeleteNode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloRutas\DeleteNode.Designer.cs">
-      <DependentUpon>DeleteNode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloRutas\EditNode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloRutas\EditNode.Designer.cs">
-      <DependentUpon>EditNode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloRutas\Etiqueta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloRutas\Etiqueta.Designer.cs">
-      <DependentUpon>Etiqueta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloRutas\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloRutas\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloRutas\Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloRutas\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloRutas\Formularios\datIncidencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloRutas\Formularios\datIncidencia.Designer.cs">
-      <DependentUpon>datIncidencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloRutas\Formularios\datKilometraje.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloRutas\Formularios\datKilometraje.Designer.cs">
-      <DependentUpon>datKilometraje.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloRutas\Formularios\frmDestino.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloRutas\Formularios\frmDestino.Designer.cs">
-      <DependentUpon>frmDestino.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloRutas\Formularios\frmIncidencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloRutas\Formularios\frmIncidencia.Designer.cs">
-      <DependentUpon>frmIncidencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloRutas\Formularios\frmKilometraje.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloRutas\Formularios\frmKilometraje.Designer.cs">
-      <DependentUpon>frmKilometraje.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloRutas\Formularios\MDIRuta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModuloRutas\Formularios\MDIRuta.Designer.cs">
-      <DependentUpon>MDIRuta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModuloRutas\FibonacciHeap.cs" />
-    <Compile Include="ModuloRutas\Graph.cs" />
-    <Compile Include="ModuloRutas\Salvoconducto.cs" />
     <Compile Include="ModuloUsuarios\Cargo.cs" />
     <Compile Include="ModuloUsuarios\Conexion2.cs" />
     <Compile Include="ModuloUsuarios\Cuenta.cs" />
@@ -378,42 +298,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModuloReportesEstadisticos\ReporteHistorialKilometraje.rdlc" />
     <EmbeddedResource Include="ModuloReportesEstadisticos\ReporteViajes.rdlc" />
-    <EmbeddedResource Include="ModuloRutas\AddNode.resx">
-      <DependentUpon>AddNode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloRutas\DeleteNode.resx">
-      <DependentUpon>DeleteNode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloRutas\EditNode.resx">
-      <DependentUpon>EditNode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloRutas\Etiqueta.resx">
-      <DependentUpon>Etiqueta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloRutas\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloRutas\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloRutas\Formularios\datIncidencia.resx">
-      <DependentUpon>datIncidencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloRutas\Formularios\datKilometraje.resx">
-      <DependentUpon>datKilometraje.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloRutas\Formularios\frmDestino.resx">
-      <DependentUpon>frmDestino.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloRutas\Formularios\frmIncidencia.resx">
-      <DependentUpon>frmIncidencia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloRutas\Formularios\frmKilometraje.resx">
-      <DependentUpon>frmKilometraje.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModuloRutas\Formularios\MDIRuta.resx">
-      <DependentUpon>MDIRuta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ModuloUsuarios\FormDatos.resx">
       <DependentUpon>FormDatos.cs</DependentUpon>
     </EmbeddedResource>
@@ -485,17 +369,6 @@
     <None Include="ModuloReportesEstadisticos\DataSetViajes.xss">
       <DependentUpon>DataSetViajes.xsd</DependentUpon>
     </None>
-    <None Include="ModuloRutas\DataBase\Ruta.xsc">
-      <DependentUpon>Ruta.xsd</DependentUpon>
-    </None>
-    <None Include="ModuloRutas\DataBase\Ruta.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Ruta.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ModuloRutas\DataBase\Ruta.xss">
-      <DependentUpon>Ruta.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -547,9 +420,7 @@
   <ItemGroup>
     <None Include="Resources\epn.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ModuloRutas\Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
