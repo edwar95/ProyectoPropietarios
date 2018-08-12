@@ -180,11 +180,22 @@ namespace WindowsFormsApplication1
         {
 
         }
-
+       // public void mostrarReportes(FormMenu frmMenu)
         private void btnNotificaciones_Click(object sender, EventArgs e)
         {
-            solicitudesPendientes sol = new solicitudesPendientes(auxuser);
-            sol.ShowDialog();
+            Conexion cn = new Conexion();
+
+            DataTable dtaux = cn.Buscar(auxuser, "select idusuario, idcargo from usuarios where email= '" + auxuser + "'");
+            DataRow row = dtaux.Rows[0];
+            string email = Convert.ToString(row["idusuario"]);
+            string cargo = Convert.ToString(row["idcargo"]);
+
+            if (cargo == "3")
+            {
+                fm1.mostrarNotificaciones(this); 
+               // solicitudesPendientes sol = new solicitudesPendientes(auxuser);
+                //sol.ShowDialog();
+            }
 
 
         }
@@ -197,6 +208,16 @@ namespace WindowsFormsApplication1
         private void lbCorreo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVehículos_Click(object sender, EventArgs e)
+        {
+            fm1.mostrarModvehiculo(this);
+        }
+
+        private void btn_formularios_Click(object sender, EventArgs e)
+        {
+            fm1.mostrarFormularios(this);
         }
 
         protected override void WndProc(ref Message m)

@@ -20,7 +20,14 @@ namespace WindowsFormsApplication1
         {
             Correo cor = new Correo();
 
+            Conexion conect = new Conexion();
+            //simuladorLogin log = new simuladorLogin();
+            // log.ShowDialog();
+            // Hola a todos esta es la tercera prueba
 
+            // conect.query("insert into NotificacionRuta values ('rut2','2-jun-2019');");
+            // conect.abrir();
+            //conect.query(" update solicitudreserva set estadosolicitud='aprobada1' where idsolicitudreserva=1;");
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -32,22 +39,19 @@ namespace WindowsFormsApplication1
             //log.ShowDialog();
 
 
+<<<<<<< HEAD
             Application.Run(new Form1());
+=======
+           Application.Run(new FormLogin());
+>>>>>>> master
 
 
 
 
             //SIMULACION LOGIN
 
-            /*
-            Conexion conect = new Conexion();
-            simuladorLogin log = new simuladorLogin();
-            log.ShowDialog();
-            */
-
-            // conect.query("insert into NotificacionRuta values ('rut2','2-jun-2019');");
-            //conect.abrir();
-            // conect.query("insert into NotificacionRuta values ('rut5','3-jun-2019')");
+            
+        
 
         }
     }

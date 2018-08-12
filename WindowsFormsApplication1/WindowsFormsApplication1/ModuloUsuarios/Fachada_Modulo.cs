@@ -4,6 +4,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using WindowsFormsApplication1.ModuloFormularios;
+using WindowsFormsApplication1.ModuloReportesEstadisticos;
+using WindowsFormsApplication1.ModuloVehiculo.Formularios;
 
 namespace WindowsFormsApplication1
 {
@@ -13,6 +16,14 @@ namespace WindowsFormsApplication1
         Cargo cargo = new Cargo();
         Usuario usuario = new Usuario();
         FormDatos frmDatos = new FormDatos();
+        mdiModVehiculo frmVehi = new mdiModVehiculo();
+        solicitudesPendientes solicitudes;
+        String aux;
+        FrmPrincipalChofer frmConductor;
+       FrmPrincipalFormularioProfesor frmProfesor;
+
+
+        //FrmReporteHistorialKilometraje frmRep
 
 
         public Fachada_Modulo(FormMenu frm, String user)
@@ -21,6 +32,7 @@ namespace WindowsFormsApplication1
 
             obtenerDatosCargo(user);
             obtenerDatosUsuario(user);
+            aux = user;
 
             FormMenu frm1 = new FormMenu(user);
             privilegiosMenu(frm);
@@ -121,6 +133,7 @@ namespace WindowsFormsApplication1
             if (frmMenú.panelContenedor.Controls.Count > 0)
                 frmMenú.panelContenedor.Controls.RemoveAt(0);
             Form fh = formHijo as Form;
+      
             fh.TopLevel = false;
             fh.FormBorderStyle = FormBorderStyle.None;
             fh.Dock = DockStyle.Fill;
@@ -129,11 +142,40 @@ namespace WindowsFormsApplication1
             fh.Show();
         }
 
+        public void mostrarFormularios(FormMenu frmMenu)
+        {
+            if (usuario.IDcargo1 == 5)
+            {
+                frmConductor = new FrmPrincipalChofer(usuario.IDusuario1 + "", usuario.Nombre);
+                //(((usuario.IDusuario1+"", usuario.Nombre);
+                mostrarMódulo(frmMenu, frmConductor);
+            }
+            else
+            {
+                frmProfesor = new FrmPrincipalFormularioProfesor();
+                frmProfesor.ponerUsuario(usuario);
+                mostrarMódulo(frmMenu, frmProfesor);
+
+            }
+        }
+        public void mostrarNotificaciones(FormMenu frmMenu)
+        {
+            solicitudes = new solicitudesPendientes(aux);
+            mostrarMódulo(frmMenu, solicitudes);
+        }
+
         public void mostrarDatos(FormMenu frmMenú)
         {
 
             privilegiosDatos();
             mostrarMódulo(frmMenú, frmDatos);
+        }
+
+
+        public void mostrarModvehiculo(FormMenu frmMenú)
+        {
+            mostrarMódulo(frmMenú, frmVehi);
+
         }
 
 
